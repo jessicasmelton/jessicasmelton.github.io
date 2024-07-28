@@ -51,10 +51,73 @@ Overall, the REU program helped me gain hands-on experience with real-world data
 
 						
 		<hr> 
+/* Carousel container */
+        .carousel-container {
+            position: relative;
+            max-width: 600px; /* Adjust the width as needed */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Carousel slides */
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+
+        /* Display the first slide by default */
+        .carousel-slide.active {
+            display: block;
+        }
+
+        /* Navigation arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3em; /* Larger size for arrows */
+            color: #000;
+            text-decoration: none;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .carousel-arrow.left {
+            left: 0;
+        }
+
+        .carousel-arrow.right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel-container">
+    <a class="carousel-arrow left" onclick="changeSlide(-1)">&#60;</a>
+    <a class="carousel-arrow right" onclick="changeSlide(1)">&#62;</a>
+    
+    <img src="Distribution-All Comments.png" class="carousel-slide active" alt="Visualization 1">
+    <img src="Polarity-All Comments.png" class="carousel-slide" alt="Visualization 2">
+    <img src="Frequent Words-All Comments.png" class="carousel-slide" alt="Visualization 3">
+    <!-- Add more images as needed -->
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.getElementsByClassName("carousel-slide");
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+    }
+</script>
+						
 		<h4>Skills Developed Through This Project:</h4>
 <ul>
     <li><strong>Research Skills:</strong> Applied research methodologies to create and investigate research questions.</li>
-    <li><strong>Data Collection and APIs:</strong> Used the YouTube Data API to scrape 21,241 comments from 30 YouTube videos, focusing on topics related to the Venezuela-Guyana border dispute and Venezuelan refugees in Guyana.</li>
+    <li><strong>Data Collection and APIs:</strong> Used the YouTube Data API to scrape 21,241 comments from 30 YouTube videos.</li>
     <li><strong>Exploratory Data Analysis:</strong> Conducted exploratory data analysis to identify key themes in comments and evaluate the impact of misinformation on sentiments towards Venezuelan refugees, cross-referencing findings with official news articles for accuracy.</li>
     <li><strong>Data Cleaning and Preprocessing:</strong> Cleaned and preprocessed the collected comments to prepare them for sentiment analysis. This included converting text to lowercase, removing punctuation and special characters, tokenizing text, removing stop words, applying stemming or lemmatization techniques, and translating non-English comments into English using a custom-built translation program with ChatGPT 4.0.</li>
     <li><strong>Natural Language Processing:</strong> Performed sentiment analysis using TextBlob to determine the polarity and subjectivity of the comments. Filtered comments using 392 keywords to create a new dataset with 6,201 relevant comments.</li>
