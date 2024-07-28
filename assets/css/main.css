@@ -111,14 +111,14 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		
-		color: #bf912e;
+		color: #453404;
 		text-decoration: none;
 	}
 
 		a:hover {
 			
 			border-bottom-color: transparent;
-			color: #bf912e !important;
+			color: #453404 !important;
 			text-decoration: none;
 		}
 
