@@ -26,6 +26,25 @@
             display: block;
         }
 
+        /* Sidebar links */
+        .inner p {
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+        }
+
+        .inner p a {
+            display: block;
+            background-color: #868a7c;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px 0; /* Add margin to separate links */
+            cursor: pointer;
+            border-bottom: none;
+        }
+
         /* Project buttons */
         .project-buttons a {
             display: inline-block;
@@ -59,10 +78,10 @@
             <a href="https://jessicasmelton.github.io/" class="image avatar"><img src="images/avatar.jpg" /></a>
             <h1><strong>Jessica Melton</strong></h1>
             <br>
-            <p><a href="about.html">About Me</a> |
-            <a href=" " target="_blank">Resume</a> |
-            <a href="projects.html">Projects</a> |
-            <a href="connect.html">Connect</a></p>
+            <p><a href="about.html">About Me</a></p>
+            <p><a href=" " target="_blank">Resume</a></p>
+            <p><a href="projects.html">Projects</a></p>
+            <p><a href="connect.html">Connect</a></p>
         </div>
     </header>
 
@@ -70,7 +89,7 @@
     <div id="main">
 
         <!-- Projects Header -->
-        <div>
+        <div class="projects-header">
             <h2>Projects</h2>
             <br>
             <h3>Misinformation in the Venezuela-Guyana Border Dispute and Its Impact on Venezuelan Migrants in Guyana</h3>
