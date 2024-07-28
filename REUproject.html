@@ -53,7 +53,8 @@
             top: 0;
             background-color: #fff;
             z-index: 100;
-            padding: 10px 0;
+            padding: 0px 0;
+            margin-bottom: 20px; /* Add margin here to create space */
         }
 
         .sticky-header nav a {
@@ -133,6 +134,12 @@
                     currentSlide = (currentSlide + direction + slides.length) % slides.length;
                     slides[currentSlide].classList.add("active");
                 }
+
+                function autoSlide() {
+                    changeSlide(1);
+                }
+
+                setInterval(autoSlide, 3000); // Change slide every 3 seconds
             </script>
 
             <div class="project-description">
