@@ -1,66 +1,101 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Melton, J</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	
-	<body class="is-preload">
+<head>
+    <title>Melton, J</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-		<!-- Header & Navigation -->
-			<header id="header" class="black-background">
-				<div class="inner">
-					<a href="https://jessicasmelton.github.io/" class="image avatar"><img src="images/avatar.jpg"/></a>
-					<h1><strong>Jessica Melton</strong></h1>
-					<br>
-                    			<p><a href="about.html">About Me</a> |
-					<p><a href=" " target="_blank">Resume</a> |
-					<p><a href="projects.html">Projects</a> |
-					<p><a href="connect.html">Connect</a> |
-				</div>
-			</header>
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
 
-		<!-- Main -->
-			<div id="main">
+        .carousel-slide.active {
+            display: block;
+        }
+    </style>
+</head>
 
-				<!-- One -->
-					<section id="one">
-						<h1>
+<body class="is-preload">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="black-background">
+        <div class="inner">
+            <a href="https://jessicasmelton.github.io/" class="image avatar"><img src="images/avatar.jpg" /></a>
+            <h1><strong>Jessica Melton</strong></h1>
+            <br>
+            <p><a href="about.html">About Me</a> |
+            <p><a href=" " target="_blank">Resume</a> |
+            <p><a href="projects.html">Projects</a> |
+            <p><a href="connect.html">Connect</a> |
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <h1>
                 <span style="color: pink;">print</span>
                 <span style="color: #F0E68C;">(</span>
                 <span style="color: #868a7c;">"Hello, World!"</span>
                 <span style="color: #F0E68C;">)</span>
             </h1>
-						<hr>	
-						<p>My name is Jessica Melton, and I am a sophomore at Tidewater Community College pursuing an Associate of 
-								Science in Computer Science. I will be transferring to Old Dominion University in the fall of 2025 to 
-								pursue my ultimate educational goal of completing a Master of Science in Data Science and Analytics. 
-								I have a passion for understanding and addressing societal challenges and believe that, through 
-								data analytics, there is immense potential for harnessing information to drive meaningful change.
-							</p>
-							<a href="about.html" style="display: inline-block; background-color: #868a7c; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 20px 0; cursor: pointer; border-bottom: none;">Learn More About Me</a>
+            <hr>
+            <p>My name is Jessica Melton, and I am a sophomore at Tidewater Community College pursuing an Associate of 
+                Science in Computer Science. I will be transferring to Old Dominion University in the fall of 2025 to 
+                pursue my ultimate educational goal of completing a Master of Science in Data Science and Analytics. 
+                I have a passion for understanding and addressing societal challenges and believe that, through 
+                data analytics, there is immense potential for harnessing information to drive meaningful change.
+            </p>
+            <div class="carousel-container">
+                <img src="image1.jpg" class="carousel-slide active" alt="Image 1">
+                <img src="image2.jpg" class="carousel-slide" alt="Image 2">
+                <img src="image3.jpg" class="carousel-slide" alt="Image 3">
+                <!-- Add more images as needed -->
+            </div>
+        </section>
+    </div>
 
-                        		</section>
-			</div>
-							
-						
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+        </div>
+    </footer>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					
-				</div>
-			</footer>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
 
-	</body>
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(currentSlideIndex);
+        }
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    </script>
+</body>
 </html>
