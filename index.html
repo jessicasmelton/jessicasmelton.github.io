@@ -5,6 +5,27 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+        /* Carousel container */
+        .carousel-container {
+            position: relative;
+            max-width: 999px; /* Adjust the width as needed */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Carousel slides */
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%; /* Set a fixed height */
+            object-fit: cover; /
+        }
+
+        /* Display the first slide by default */
+        .carousel-slide.active {
+            display: block;
+        }
 	</head>
 	
 	<body class="is-preload">
@@ -40,9 +61,30 @@
 								I have a passion for understanding and addressing societal challenges and believe that, through 
 								data analytics, there is immense potential for harnessing information to drive meaningful change.
 							</p>
-							<a href="about.html" style="display: inline-block; background-color: #868a7c; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 20px 0; cursor: pointer; border-bottom: none;">Learn More About Me</a>
+							<section id="one">
+            <div class="carousel-container">
+                <img src="Distribution-All Comments.png" class="carousel-slide active" alt="Visualization 1">
+                <img src="Polarity-All Comments.png" class="carousel-slide" alt="Visualization 2">
+                <img src="Frequent Words-All Comments.png" class="carousel-slide" alt="Visualization 3">
+                <!-- Add more images as needed -->
+            </div>
 
-                        		</section>
+            <script>
+                let currentSlide = 0;
+                const slides = document.getElementsByClassName("carousel-slide");
+
+                function changeSlide(direction) {
+                    slides[currentSlide].classList.remove("active");
+                    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                    slides[currentSlide].classList.add("active");
+                }
+
+                function autoSlide() {
+                    changeSlide(1);
+                }
+
+                setInterval(autoSlide, 3000); // Change slide every 3 seconds
+            </script>
 			</div>
 							
 						
