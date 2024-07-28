@@ -26,37 +26,7 @@
             display: block;
         }
 
-        /* Navigation arrows */
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 3em; /* Larger size for arrows */
-            color: #000;
-            text-decoration: none;
-            padding: 15px;
-            cursor: pointer;
-        }
-
-        .carousel-arrow.left {
-            left: 35px; /* Position arrow to the left */
-        }
-
-        .carousel-arrow.right {
-            right: 35px; /* Position arrow to the right */
-        }
-
         /* Sticky header styling */
-        .sticky-header {
-            position: -webkit-sticky; /* For Safari */
-            position: sticky;
-            top: 0;
-            background-color: #fff;
-            z-index: 100;
-            padding: 0px 0;
-            margin-bottom: 20px; /* Add margin here to create space */
-        }
-
         .sticky-header nav a {
             display: inline-block;
             background-color: #868a7c;
@@ -99,8 +69,8 @@
     <!-- Main -->
     <div id="main">
 
-        <!-- Sticky Header -->
-        <div class="sticky-header">
+        <!-- Projects Header -->
+        <div class="projects-header">
             <h2>Projects</h2>
             <br>
             <h3>Misinformation in the Venezuela-Guyana Border Dispute and Its Impact on Venezuelan Migrants in Guyana</h3>
@@ -116,9 +86,6 @@
         <!-- One -->
         <section id="one">
             <div class="carousel-container">
-                <a class="carousel-arrow left" onclick="changeSlide(-1)">&#60;</a>
-                <a class="carousel-arrow right" onclick="changeSlide(1)">&#62;</a>
-
                 <img src="Distribution-All Comments.png" class="carousel-slide active" alt="Visualization 1">
                 <img src="Polarity-All Comments.png" class="carousel-slide" alt="Visualization 2">
                 <img src="Frequent Words-All Comments.png" class="carousel-slide" alt="Visualization 3">
